@@ -1,0 +1,23 @@
+<template name="file">
+  <div class="file">
+    <div class="preview">
+      <a href="{{url}}" target="_blank"></a>
+      {{#if isImage url}}
+        <img src="{{url}}" alt="{{url}}">
+      {{else}}
+        <i class="fa fa-file-o"></i>
+      {{/if}}
+    </div>
+    <input type="text" class="form-control" value="{{url}}">
+  </div>
+</template>
+
+<template name="files">
+  <div class="files">
+    {{#each files}}
+      {{> file}}
+    {{else}}
+      <p class="alert alert-warning">No files uploaded yet!</p>
+    {{/each}}
+  </div>
+</template>
